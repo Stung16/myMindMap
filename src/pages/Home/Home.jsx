@@ -10,10 +10,10 @@ export default function Home() {
     if(userInfo){
       return false
     }else{
-      // const res = await handleLoginWithGoogle();
-      // if (res?.status === 200) {
-      //   window.location.href = res?.data?.result?.urlRedirect;
-      // }
+      const res = await handleLoginWithGoogle();
+      if (res?.status === 200) {
+        window.location.href = res?.data?.result?.urlRedirect;
+      }
       toast.error('Something has error!!')
     }
   };

@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import {  useState } from "react";
+import { useState } from "react";
 import { Label } from "@/components/ui/label";
 import { FcGoogle } from "react-icons/fc";
 import { FaRegEyeSlash, FaRegEye } from "react-icons/fa";
@@ -52,10 +52,11 @@ function Login() {
     }
   };
   const handleRedirect = async () => {
-    const res = await handleLoginWithGoogle();
-    if (res?.status === 200) {
-      window.location.href = res.metadata;
-    }
+    // const res = await handleLoginWithGoogle();
+    // if (res?.status === 200) {
+    //   window.location.href = res.metadata;
+    // }
+    toast.error("Some thing went wrong!");
   };
   return (
     <>
@@ -63,7 +64,7 @@ function Login() {
         <title>Login | Mindmap</title>
         <meta name="description" content="login mindmap" />
       </Helmet>
-      <div className="flex flex-col mt-16 bg-white !z-[199] relative items-center justify-center">
+      <div className="flex flex-col mt-16   !z-[199] relative items-center justify-center">
         <h3 className="text-[2.5rem] mb-2 font-semibold">Log In</h3>
         <form
           action=""
@@ -105,7 +106,10 @@ function Login() {
           <p className="text-[#f73d7b] font-semibold text-[13.5px]">
             {errors.password && "Please enter your password!"}
           </p>
-          <Link to={"/account/forgot"} className="mt-2 ml-auto text-end hover:text-[#ddd] w-max select-none">
+          <Link
+            to={"/account/forgot"}
+            className="mt-2 ml-auto text-end hover:text-[#ddd] w-max select-none"
+          >
             Forgot password?
           </Link>
           <Button
@@ -128,10 +132,7 @@ function Login() {
           </div>
           <p className="text-center text-black">
             Do not you have account?{" "}
-            <Link
-              className="text-[#f73d7b] font-semibold"
-              to={"/signup"}
-            >
+            <Link className="text-[#f73d7b] font-semibold" to={"/signup"}>
               Sign up
             </Link>
           </p>

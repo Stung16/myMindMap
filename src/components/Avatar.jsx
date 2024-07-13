@@ -7,6 +7,7 @@ import { FaRegUserCircle } from "react-icons/fa"
 import { logout } from "@/services/auth.service"
 import { Link } from "react-router-dom"
 function Avatar({ user }) {
+  console.log(user);
   const [show, setShow] = useState(false)
   const refMenu = useRef()
   const handleOutsideClick = (e) => {
@@ -29,7 +30,7 @@ function Avatar({ user }) {
     window.location.href = "/signin"
   }
   return (
-    <div className="relative bg-white !z-50" ref={refMenu}>
+    <div className="relative bg-white rounded-full !z-50" ref={refMenu}>
       <div
         className="avatar p-[2px] border-[2px] border-solid border-[#ccc] rounded-full"
         onClick={() => setShow(!show)}

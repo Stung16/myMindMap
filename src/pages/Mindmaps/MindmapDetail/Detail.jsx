@@ -181,7 +181,7 @@ function Detail() {
           <div className="flex gap-6 ml-auto w-[60%] justify-end">
             {/* <Edges_types setSelectedKeys={setSelectedKeys} selectedKeys={selectedKeys} /> */}
             <div className="relative">
-              <Label className="absolute left-[6px] top-[-8px] bg-white p-[2px]">
+              <Label className="absolute left-[6px] top-[-8px] bg-white dark:bg-black p-[2px]">
                 Edge type
               </Label>
               <Select

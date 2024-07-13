@@ -46,11 +46,13 @@ function Register() {
       setLoading(false);
     }
   };
-  const handleRedirect = async () => {
-    const res = await handleLoginWithGoogle();
-    if (res.status === 200) {
-      window.location.href = res.metadata;
-    }
+  const handleRedirect =  () => {
+    // const res = await handleLoginWithGoogle();
+    // if (res.status === 200) {
+    //   window.location.href = res.metadata;
+    // }
+    // console.log();
+    toast.error("Some thing went wrong!");
   };
   return (
     <>
@@ -75,7 +77,7 @@ function Register() {
             </Button>
           </div>
         </div>
-        <div className="flex flex-col border-l-2 border-solid border-blue1 pl-6 bg-white !z-[199] relative items-center justify-center">
+        <div className="flex flex-col border-l-2 border-solid border-blue1 pl-6 !z-[199] relative items-center justify-center">
           <h3 className="mb-2 text-xl font-semibold">
             with your email address
           </h3>

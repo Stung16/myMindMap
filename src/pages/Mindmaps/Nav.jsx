@@ -112,7 +112,7 @@ function Navigate({ onSearch, onLoading, data }) {
         <h3 className="text-2xl">{heading[pathname]}</h3>
         <div className="flex items-center gap-3">
           <Search onSearch={onSearch} data={data} />
-          <Avatar user_id={userInfo?.id} />
+          <Avatar user={userInfo} />
         </div>
       </div>
       <div className="flex gap-4">
