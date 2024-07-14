@@ -31,7 +31,7 @@ function Auth() {
 
         client.setToken(res.data.accessToken);
         toast.success("Login success!");
-        navigate("/");
+        window.location.href = "/";
       } else {
         navigate("/");
         window.location.reload();
