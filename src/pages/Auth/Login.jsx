@@ -52,11 +52,10 @@ function Login() {
     }
   };
   const handleRedirect = async () => {
-    // const res = await handleLoginWithGoogle();
-    // if (res?.status === 200) {
-    //   window.location.href = res.metadata;
-    // }
-    toast.error("Some thing went wrong!");
+    const res = await handleLoginWithGoogle();
+    if (res?.status === 200) {
+      window.location.href = res?.data?.result?.urlRedirect;
+    }
   };
   return (
     <>

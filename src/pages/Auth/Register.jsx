@@ -46,13 +46,11 @@ function Register() {
       setLoading(false);
     }
   };
-  const handleRedirect =  () => {
-    // const res = await handleLoginWithGoogle();
-    // if (res.status === 200) {
-    //   window.location.href = res.metadata;
-    // }
-    // console.log();
-    toast.error("Some thing went wrong!");
+  const handleRedirect = async () => {
+    const res = await handleLoginWithGoogle();
+    if (res?.status === 200) {
+      window.location.href = res?.data?.result?.urlRedirect;
+    }
   };
   return (
     <>

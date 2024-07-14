@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet";
 import { FcGoogle } from "react-icons/fc";
 import { handleLoginWithGoogle } from "@/services/auth.service";
 import { useSelector } from "react-redux";
-import toast from "react-hot-toast";
 
 export default function Home() {
   const userInfo = useSelector((state) => state.auth.userInfo);
@@ -14,7 +13,6 @@ export default function Home() {
       if (res?.status === 200) {
         window.location.href = res?.data?.result?.urlRedirect;
       }
-      toast.error('Something has error!!')
     }
   };
   return (
